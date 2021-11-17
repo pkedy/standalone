@@ -1,0 +1,57 @@
+project_name: dapr-standalone
+builds:
+  - id: linux-darwin
+    main: ./cmd/installer
+    binary: "{{ .ProjectName }}"
+    goos:
+      - linux
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    env:
+      - CGO_ENABLED=0
+    flags:
+      - -mod=readonly
+    ldflags:
+      - -w -s -X main.version={{ .Version }}
+  - id: windows-amd64
+    main: ./cmd/installer
+    binary: "{{ .ProjectName }}"
+    goos:
+      - windows
+    goarch:
+      - amd64
+    env:
+      - CGO_ENABLED=0
+    flags:
+      - -mod=readonly
+    ldflags:
+      - -w -s -X main.version={{ .Version }}
+archives:
+  - id: dapr-standalone
+    builds:
+      - linux-darwin
+      - windows-amd64
+    name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}"
+    format: tar.gz
+    format_overrides:
+      - goos: windows
+        format: zip
+checksum:
+  name_template: 'checksums.txt'
+snapshot:
+  name_template: "{{ .Tag }}"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
+
+release:
+  github:
+    owner: pkedy
+    name: standalone
+  prerelease: auto
+  draft: false
