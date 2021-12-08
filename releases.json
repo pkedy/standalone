@@ -1,5 +1,41 @@
 {
   "releases": {
+    "v1.5.1": {
+      "cli": {
+        "windows_amd64": "https://github.com/dapr/cli/releases/download/v1.5.1/dapr_windows_amd64.zip",
+        "linux_amd64": "https://github.com/dapr/cli/releases/download/v1.5.1/dapr_linux_amd64.tar.gz",
+        "linux_arm64": "https://github.com/dapr/cli/releases/download/v1.5.1/dapr_linux_arm64.tar.gz",
+        "darwin_amd64": "https://github.com/dapr/cli/releases/download/v1.5.1/dapr_darwin_amd64.tar.gz",
+        "darwin_arm64": "https://github.com/dapr/cli/releases/download/v1.5.1/dapr_darwin_arm64.tar.gz"
+      },
+      "binaries": {
+        "windows_amd64": [
+          "https://github.com/dapr/dapr/releases/download/v1.5.1/daprd_windows_amd64.zip",
+          "https://github.com/dapr/dashboard/releases/download/v0.9.0/dashboard_windows_amd64.zip"
+        ],
+        "linux_amd64": [
+          "https://github.com/dapr/dapr/releases/download/v1.5.1/daprd_linux_amd64.tar.gz",
+          "https://github.com/dapr/dashboard/releases/download/v0.9.0/dashboard_linux_amd64.tar.gz"
+        ],
+        "linux_arm64": [
+          "https://github.com/dapr/dapr/releases/download/v1.5.1/daprd_linux_arm64.tar.gz",
+          "https://github.com/dapr/dashboard/releases/download/v0.9.0/dashboard_linux_arm64.tar.gz"
+        ],
+        "darwin_amd64": [
+          "https://github.com/dapr/dapr/releases/download/v1.5.1/daprd_darwin_amd64.tar.gz",
+          "https://github.com/dapr/dashboard/releases/download/v0.9.0/dashboard_darwin_amd64.tar.gz"
+        ],
+        "darwin_arm64": [
+          "https://github.com/dapr/dapr/releases/download/v1.5.1/daprd_darwin_arm64.tar.gz",
+          "https://github.com/dapr/dashboard/releases/download/v0.9.0/dashboard_darwin_arm64.tar.gz"
+        ]
+      },
+      "images": [
+        "daprio/placement:1.5.1",
+        "openzipkin/zipkin:latest",
+        "redis:latest"
+      ]
+    },
     "v1.5.0": {
       "cli": {
         "windows_amd64": "https://github.com/dapr/cli/releases/download/v1.5.0/dapr_windows_amd64.zip",
